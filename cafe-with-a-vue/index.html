@@ -29,7 +29,7 @@
 			</ul>
 
 			<footer class="footer">
-				<p>Copyright {{ restaurantName }} 2019</p>
+				<p>Copyright {{ restaurantName + " " + coord  }} 2019</p>
 			</footer>
 		</div>
 
@@ -38,7 +38,15 @@
 			const app = new Vue({
 				el: "#app",
 				data: {
-					restaurantName: "La belle vue"
+					restaurantName: "La belle vue",
+					adresse: "18 avenue du Beurre, Paris, France",
+					telephone: "01 88 88 88 88",
+					email: "hello@cafewithavue.bakery"
+				},
+				computed: {
+					coord() {
+						return this.adresse + " " + this.telephone + " " + this.email
+					}
 				}
 			})
 		</script>
